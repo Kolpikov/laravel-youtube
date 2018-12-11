@@ -6,6 +6,12 @@ use Illuminate\Support\Facades\Facade;
 
 /**
  * Class Youtube
+ *
+ * @method static array getPlaylistItems(string $playListID)
+ * @method static array getContentDetails(string $id)
+ * @method static string getVideoLength(string $id)
+ *
+ * @see \Kolpikov\Youtube\Youtube
  * @package Kolpikov\Youtube\Facades
  */
 class Youtube extends Facade
