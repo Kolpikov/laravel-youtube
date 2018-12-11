@@ -1,0 +1,50 @@
+{
+    "name": "kolpikov/laravel-youtube",
+    "description": "Basic Youtube API support for the Laravel framework",
+        "keywords": [
+        "laravel",
+        "youtube"
+    ],
+    "type": "library",
+    "homepage": "https://github.com/kolpikov/laravel-youtube",
+    "require": {
+        "php": ">=7.1.3",
+        "ext-json": "*",
+        "ext-curl": "*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.8@dev"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrew Kolpikov",
+            "email": "kolpikov.andrey@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Kolpikov\\Youtube\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kolpikov\\Youtube\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kolpikov\\Youtube\\YoutubeServiceProvider"
+            ],
+            "aliases": {
+                "Youtube": "Kolpikov\\Youtube\\Youtube"
+            }
+        }
+    }
+}
