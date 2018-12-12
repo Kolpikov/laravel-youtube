@@ -45,12 +45,13 @@ class Youtube
 
     /**
      * @param string $playListID
+     * @param array $part
      * @return array
      */
-    public function getPlaylistItems(string $playListID): array
+    public function getPlaylistItems(string $playListID, array $part = []): array
     {
         $params = [
-            'part' => 'snippet',
+            'part' => $this->buildPartField($part, 'snippet'),
             'key' => $this->getYoutubeAppKey(),
             'maxResults' => $this->getMaxResults(),
             'playlistId' => $playListID,
@@ -68,12 +69,13 @@ class Youtube
 
     /**
      * @param string $id
+     * @param array $part
      * @return array
      */
-    public function getContentDetails(string $id): array
+    public function getContentDetails(string $id, array $part = []): array
     {
         $params = [
-            'part' => 'contentDetails',
+            'part' => $this->buildPartField($part, 'contentDetails'),
             'key' => $this->getYoutubeAppKey(),
             'id' => $id,
         ];
@@ -101,6 +103,16 @@ class Youtube
         }
 
         return '';
+    }
+
+    /**
+     * @param array $part
+     * @param string $default
+     * @return string
+     */
+    private function buildPartField(array $part, string $default): string
+    {
+        return !empty($part) ? implode(',', $part) : $default;
     }
 
     /**

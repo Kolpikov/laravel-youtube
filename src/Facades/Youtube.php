@@ -7,8 +7,8 @@ use Illuminate\Support\Facades\Facade;
 /**
  * Class Youtube
  *
- * @method static array getPlaylistItems(string $playListID)
- * @method static array getContentDetails(string $id)
+ * @method static array getPlaylistItems(string $playListID, array $part)
+ * @method static array getContentDetails(string $id, array $part)
  * @method static string getVideoLength(string $id)
  *
  * @see \Kolpikov\Youtube\Youtube
