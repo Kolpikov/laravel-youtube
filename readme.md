@@ -2,6 +2,9 @@ Laravel Youtube
 =========
 
 ![Travis Youtube Build](https://api.travis-ci.org/kolpikov/laravel-youtube.svg?branch=master)
+[<img src="https://poser.pugx.org/kolpikov/laravel-youtube/d/total.svg" alt="Total Downloads">](https://packagist.org/packages/kolpikov/laravel-youtube)
+[<img src="https://poser.pugx.org/kolpikov/laravel-youtube/v/stable.svg" alt="Latest Stable Version">](https://packagist.org/packages/kolpikov/laravel-youtube)
+[<img src="https://poser.pugx.org/kolpikov/laravel-youtube/license.svg" alt="License">](https://packagist.org/packages/kolpikov/laravel-youtube)
 
 Basic Youtube API v.3 support for the Laravel framework
 
