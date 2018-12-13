@@ -1,7 +1,7 @@
 Laravel Youtube
 =========
 
-![Travis Youtube Build](https://api.travis-ci.org/kolpikov/laravel-youtube.svg?branch=master)
+[![Build Status](https://travis-ci.org/Kolpikov/laravel-youtube.svg?branch=master)](https://travis-ci.org/Kolpikov/laravel-youtube)
 [<img src="https://poser.pugx.org/kolpikov/laravel-youtube/d/total.svg" alt="Total Downloads">](https://packagist.org/packages/kolpikov/laravel-youtube)
 [<img src="https://poser.pugx.org/kolpikov/laravel-youtube/v/stable.svg" alt="Latest Stable Version">](https://packagist.org/packages/kolpikov/laravel-youtube)
 [<img src="https://poser.pugx.org/kolpikov/laravel-youtube/license.svg" alt="License">](https://packagist.org/packages/kolpikov/laravel-youtube)
