@@ -15,6 +15,7 @@ class Youtube
      */
     private $youtubeApiEndpoins = [
         'videos.list' => 'https://www.googleapis.com/youtube/v3/videos',
+        'playlists' => 'https://www.googleapis.com/youtube/v3/playlists',
         'playlistItems.list' => 'https://www.googleapis.com/youtube/v3/playlistItems',
     ];
 
@@ -41,6 +42,29 @@ class Youtube
         }
 
         $this->youtubeAppKey = $key;
+    }
+
+    /**
+     * @param string $channelID
+     * @return array
+     */
+    public function getPlaylists(string $channelID): array
+    {
+        $params = [
+            'part' => 'snippet',
+            'key' => $this->getYoutubeAppKey(),
+            'maxResults' => $this->getMaxResults(),
+            'channelId' => $channelID,
+        ];
+
+        $requestUrl = $this->buildRequestUrl(
+            $this->youtubeApiEndpoins['playlists'],
+            $params
+        );
+
+        $results = $this->getResponseData($requestUrl);
+
+        return $results;
     }
 
     /**
