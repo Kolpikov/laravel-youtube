@@ -44,6 +44,30 @@ class Youtube
         $this->youtubeAppKey = $key;
     }
 
+    // TODO: refactor this in future
+    public function getResponse(string $key, string $id, $endpoint, array $part = []): array
+    {
+        if (!isset($this->youtubeApiEndpoins[$endpoint])) {
+            return [];
+        }
+
+        $params = [
+            $key => $id,
+            'part' => $this->buildPartField($part, 'snippet'),
+            'key' => $this->getYoutubeAppKey(),
+            'maxResults' => 1,
+        ];
+
+        $requestUrl = $this->buildRequestUrl(
+            $this->youtubeApiEndpoins[$endpoint],
+            $params
+        );
+
+        $results = $this->getFullResponseData($requestUrl);
+
+        return $results;
+    }
+
     /**
      * @param string $channelID
      * @return array
@@ -194,6 +218,15 @@ class Youtube
         }
 
         return $results;
+    }
+
+    /**
+     * @param string $requestUrl
+     * @return array
+     */
+    private function getFullResponseData(string $requestUrl): array
+    {
+        return $this->sendRequest($requestUrl);
     }
 
     /**
